@@ -1,25 +1,38 @@
-\documentclass[twoside,14Q,dvipdfmx,uplatex]{jsarticle}
+\documentclass[twoside,12pt,uplatex]{jsarticle}
+
+%ヘッダー
 \pagestyle{myheadings}
 \markboth{坪井------何が制約による説明を説明にしているのか？}{応用哲学会第15年次研究大会}
 \setcounter{page}{1}
+
+%maketitle情報
 \title{何が制約による説明を説明にしているのか
 \large{\\--- グラウンディングの観点から ---}
 }
 \author{坪井祥吾\thanks{一橋大学大学院社会学研究科，\texttt{tsuboishogo98@gmail.com}}}
-
 \date{2023年4月22日}
+
+%余白など
+\usepackage[top=45truemm,bottom=30truemm,left=30truemm,right=30truemm]{geometry}
+\setlength{\fullwidth}{\textwidth}
+
+%英字フォント
+%\usepackage{ebgaramond}
+\usepackage{mathpazo}  
 
 %数式など
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-
 \usepackage{graphicx}
 
 %url，ハイパーリンク
 \usepackage{url}
-\usepackage[dvipdfmx]{hyperref}
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+
+%文字化け
+\usepackage{pxjahyper}
 
 %引用スタイル
 \usepackage{natbib}
@@ -27,10 +40,10 @@
 
 %定理環境
 \theoremstyle{definition}
-\newtheorem{dfn}{定義}
-\newtheorem{thm}{定理}
-\newtheorem{lem}{補題}
-\newtheorem{fact}{事実}
+\newtheorem{dfn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{fact}{Fact}
 \newtheorem*{lem*}{}
 \newtheorem{thesis}{テーゼ}
 
@@ -41,7 +54,6 @@
 \usetikzlibrary{graphs}
 \usetikzlibrary{positioning}
 \allowdisplaybreaks[1]
-\usepackage{url}
 
 %圏点
 \usepackage{pxrubrica}
@@ -79,11 +91,11 @@
 \noindent(1) は\ref{firstargument}節で，(2) は\ref{secondargument}節で擁護する．
 
 \section{表記法}
-本論に入る前に，私が利用する表記法をまとめておく．まず文は，ギリシア文字$\phi, \psi, \ldots$で表す．そして\emph{説明}は，文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{e}$として表現することにする（「e」はexplanationのeである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{e}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$を説明する〉ということを意味する．
+本論に入る前に，私が利用する表記法をまとめておく．まず文は，ギリシア文字$\phi, \psi, \ldots$で表す．そして\emph{説明}は，文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{E}$として表現することにする（「E」は\underline{E}xplanationのEである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{E}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$を説明する〉ということを意味する．
 
-次に\emph{因果言明}は，やはり文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{c}$として表現することにする（「c」はcausationのcである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{c}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$を引き起こす〉ということを意味する．ただし，ここで因果言明は因果関係それ自体ではないことに注意せよ．あくまで因果言明は，しかじかの因果関係が成り立っていることを報告しているような言語的な表現である．よって，因果言明を文ベースで表すからといって，因果関係の関係項が文で支持されるような存在者（e.g., 事実，出来事）に限定されるということにはならない．
+次に\emph{因果言明}は，やはり文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{C}$として表現することにする（「C」は\underline{C}ausationのCである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{C}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$を引き起こす〉ということを意味する．ただし，ここで因果言明は因果関係それ自体ではないことに注意せよ．あくまで因果言明は，しかじかの因果関係が成り立っていることを報告しているような言語的な表現である．よって，因果言明を文ベースで表すからといって，因果関係の関係項が文で支持されるような存在者（e.g., 事実，出来事）に限定されるということにはならない．
 
-最後に\emph{グラウンディング言明}（グラウンディングの概念は\ref{firstargument}節で導入する）も，やはり文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{g}$として表現することにする（「g」はgroundingのgである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{g}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$をグラウンドする〉ということを意味する．上と同様に，この表現の仕方はグラウンディング関係の関係項についての特定のコミットメントを含意しない．
+最後に\emph{グラウンディング言明}（グラウンディングの概念は\ref{firstargument}節で導入する）も，やはり文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{G}$として表現することにする（「G」は\underline{G}roundingのGである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{G}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$をグラウンドする〉ということを意味する．上と同様に，この表現の仕方はグラウンディング関係の関係項についての特定のコミットメントを含意しない．
 
 \section{制約による説明}\label{explanationbyconstraint}
 \subsection{因果的説明}
@@ -228,6 +240,12 @@ BWCのCh.1の元ネタ．
     $\Longleftrightarrow$ Eは，世界の因果情報を与えることによって説明している．
 \end{dfn}
 
+非因果的説明が何\emph{ではない}か：
+\begin{quote}
+非因果的説明が非因果的だとされるのは，それが，その説明力を，世界の因果構造を記述していることから引き出しているわけではないからである\citep[495]{Lange2013a}．
+
+DMEが被説明項の原因をたまたま特定していることがあることは，それが被説明項の原因を記述すること\emph{のおかげで}働いていることを意味しない．母親が三人の子供を持っていることがいちご配りの失敗を説明するのは，それが彼女の失敗の原因である\emph{おかげ}ではなく，彼女の成功を数学的に不可能にしている\emph{おかげ}である\citep[496]{Lange2013a}．
+\end{quote}
 
 \subsection{\cite{Lange2018b}.Because Without Cause}
 Langeの「制約による説明」についての概説的な論文．
