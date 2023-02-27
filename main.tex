@@ -1,4 +1,4 @@
-\documentclass[twoside,12pt,uplatex]{jsarticle}
+\documentclass[twoside,11pt,uplatex]{jsarticle}
 
 %ヘッダー
 \pagestyle{myheadings}
@@ -13,8 +13,7 @@
 \date{2023年4月22日}
 
 %余白など
-\usepackage[top=45truemm,bottom=30truemm,left=30truemm,right=30truemm]{geometry}
-\setlength{\fullwidth}{\textwidth}
+
 
 %英字フォント
 %\usepackage{ebgaramond}
@@ -46,6 +45,7 @@
 \newtheorem{fact}{Fact}
 \newtheorem*{lem*}{}
 \newtheorem{thesis}{テーゼ}
+\newtheorem{thesis*}{}
 
 \usepackage{mathrsfs}
 \usepackage{bussproofs} %証明図
@@ -98,6 +98,14 @@
 最後に\emph{グラウンディング言明}（グラウンディングの概念は\ref{firstargument}節で導入する）も，やはり文の集合と文をつなぐ多対一のオペレーター$\xrightarrow{G}$として表現することにする（「G」は\underline{G}roundingのGである）．よって，$\phi_1, \phi_2, \ldots\xrightarrow{G}\psi$で，〈$\phi_1, \phi_2, \ldots$が$\psi$をグラウンドする〉ということを意味する．上と同様に，この表現の仕方はグラウンディング関係の関係項についての特定のコミットメントを含意しない．
 
 \section{制約による説明}\label{explanationbyconstraint}
+
+制約による説明の特徴\cite{Lange2013a}：
+\begin{itemize}
+    \item 数学的必然性に訴えていることがある．
+    \item 自然法則に訴えていない事が多い．
+    \item 自然法則に訴えている場合，その法則は比較的強い必然性を持っている．
+    \item 二つの現象が似ていることがcoincidenceでないことを説明できる(505--6)．
+\end{itemize}
 \subsection{因果的説明}
 \subsection{Langeの見解}
 
@@ -109,16 +117,37 @@
 	\end{description}
 
 
-\section{論証その1: 原因による説明とグラウンドによる説明}\label{firstargument}
+\section{反論その1：何のおかげでの問いに答えていない．}\label{firstargument}
 
-\subsection{Langeの見解の難点その1}
 Langeの理論には次の難点がある．
-	\begin{enumerate}
-	\item 必然性の階層構造は，形而上学的なコミットメントとして重すぎる．
-	\item そもそも，「何のおかげで」の問いへの答えになっていない．
-	\end{enumerate}
+    \begin{enumerate}
+    \item そもそも，「何のおかげで」の問いへの答えになっていない．
+    \item 必然性の階層構造は，形而上学的なコミットメントとして重すぎる．
+    \end{enumerate}
 
-\subsection{グラウンディング}
+Langeは，EBCは因果的ではない，とか，EBCは因果的情報をその説明力の源泉としてない，とかいったネガティブなことはさかんに言っている\citep{Lange2013a}が，では何なのかをそもそもあまり言っていない．
+
+様相的事実は説明されるべき事柄のはずだが，Langeはむしろそれを説明項にしている．
+
+\section{反論その2：形而上学的に重すぎる}\label{secondargument}
+
+いかなる形而上学理論も，少なくとも次の二つの基準を満たしている程度に応じて評価される．
+\begin{quote}
+    \emph{ミニマル性}\quad 理論が措定する形而上学的存在者が（種的にないし数的に）少ないこと．
+\end{quote}
+
+\begin{quote}
+    \emph{非実質性}\quad 理論が排除する他の形而上学的見解が少ないこと．
+\end{quote}
+これらの基準に照らすと，Langeの見解はミニマルでもないし，非実質的でもない．
+
+ミニマル性については，
+
+非実質性については，
+
+\section{グラウンディングによるEBCの理論}
+
+\subsection{（ミニマルな）グラウンディングの概念}
 
 \subsection{グラウンドによる説明としての制約による説明}
 $\phi\xrightarrow{e}\psi$が非因果的説明であるのは，次のことが成り立つ\emph{おかげ}である．
@@ -126,19 +155,8 @@ $\phi\xrightarrow{e}\psi$が非因果的説明であるのは，次のことが�
 	\item $\phi$は$\psi$に関するグラウンディング情報$G$を含んでいる．
 	\end{enumerate}
 
-\section{論証その2: 文脈主義}\label{secondargument}
+\subsection{グラウンディングによる理論の一般性}
 
-\subsection{Langeの見解の難点その2}
-Langeの理論は，因果情報とグラウンディング情報は大抵の場合どちらも説明に必要だ，というデータを捉えられていない．
-
-\subsection{発話の文脈}
-
-\subsection{因果-グラウンディング混合理論の最終的な形}
-$\phi\xrightarrow{e}\psi$が非因果的説明であるのは，次の二つが成り立つ\emph{おかげ}である．
-	\begin{enumerate}
-	\item $\phi$は$\psi$に関するグラウンディング情報$G$を含んでいる．	
-	\item $\phi\xrightarrow{e}\psi$の発話の文脈が$G$を要請している．
-	\end{enumerate}
 
 \section{おわりに}
 
@@ -240,11 +258,18 @@ BWCのCh.1の元ネタ．
     $\Longleftrightarrow$ Eは，世界の因果情報を与えることによって説明している．
 \end{dfn}
 
-非因果的説明が何\emph{ではない}か：
+DMEが何\emph{ではない}か：
 \begin{quote}
 非因果的説明が非因果的だとされるのは，それが，その説明力を，世界の因果構造を記述していることから引き出しているわけではないからである\citep[495]{Lange2013a}．
 
 DMEが被説明項の原因をたまたま特定していることがあることは，それが被説明項の原因を記述すること\emph{のおかげで}働いていることを意味しない．母親が三人の子供を持っていることがいちご配りの失敗を説明するのは，それが彼女の失敗の原因である\emph{おかげ}ではなく，彼女の成功を数学的に不可能にしている\emph{おかげ}である\citep[496]{Lange2013a}．
+
+[DME]が原因と被説明項との間にinvokeするいかなるつながりも，普通の偶然的な自然法則の\emph{おかげで}成り立っているわけではなく，特に数学的必然性の\emph{おかげで}成り立っているのである．\citep[496--7]{Lange2013a}
+\end{quote}
+
+DMEが何\emph{であるか}：
+\begin{quote}
+    科学におけるDMEに現れる自然法則は，存在する特定の種類の原因を記述するような法則を\emph{超越}していなければならない，と私は提案する．\citep[505]{Lange2013a}
 \end{quote}
 
 \subsection{\cite{Lange2018b}.Because Without Cause}
